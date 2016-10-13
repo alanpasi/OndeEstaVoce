@@ -26,25 +26,59 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/lbl_tv_latitude" />
+            android:text="@string/lbl_tv_latitude"
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/lat_user_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/lbl_tv_latitude" />
+            android:text="@string/lbl_tv_latitude"
+            android:textAlignment="center" />
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/lbl_tv_longitude" />
+        android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/lbl_tv_longitude"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/lon_user_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/lbl_tv_longitude"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/lbl_tv_velocity" />
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/lbl_tv_velocity"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/speed_user_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/lbl_tv_velocity"
+            android:textAlignment="center" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_user_two"
