@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">Onde Está Você</string>
-    <string name="btn_lbl_user_one">Usuário 1</string>
-    <string name="btn_lbl_user_two">Usuário 2</string>
+    <string name="btn_lbl_user_one_ci">Usuário 1 - Check in</string>
+    <string name="btn_lbl_user_one_co">Usuário 1 - Check out</string>
+    <string name="btn_lbl_user_two_ci">Usuário 2 - Check in</string>
+    <string name="btn_lbl_user_two_co">Usuário 2 - Check out</string>
     <string name="lbl_tv_latitude">Latitude</string>
     <string name="lbl_tv_longitude">Longitude</string>
     <string name="lbl_tv_velocity">Velocidade</string>
+    <string name="btn_lbl_show_map">Mostrar Mapa</string>
 </resources>
