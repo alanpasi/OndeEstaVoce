@@ -1,6 +1,5 @@
 package com.alanpasi.ondeestavoce;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -12,13 +11,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView mLonUserTwo;
     private TextView mSpeedUserTwo;
 
-    private Button mBtnUserOne;
-    private Button mBtnUserTwo;
+    private Button mTBtnUserOne;
+    private Button mTBtnUserTwo;
     private Button mBtnShowMap;
 
     private boolean userOneIsLoggedIn = false;
@@ -57,18 +52,17 @@ public class MainActivity extends AppCompatActivity {
         mLonUserTwo = (TextView) findViewById(R.id.lon_user_two);
         mSpeedUserTwo = (TextView) findViewById(R.id.speed_user_two);
 
-        mBtnUserOne = (Button) findViewById(R.id.btn_user_one);
-        mBtnUserTwo = (Button) findViewById(R.id.btn_user_two);
+        mTBtnUserOne = (Button) findViewById(R.id.tbtn_user_one);
+        mTBtnUserTwo = (Button) findViewById(R.id.tbtn_user_two);
         mBtnShowMap = (Button) findViewById(R.id.btn_show_map);
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
-        mBtnUserOne.setOnClickListener(new View.OnClickListener() {
+        mTBtnUserOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!userOneIsLoggedIn) {
                     myRefUserOne.child("is_on").setValue(true);
-                    mBtnUserOne.setText(R.string.btn_lbl_user_one_co);
                     if (ActivityCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.ACCESS_FINE_LOCATION)
                             != PackageManager.PERMISSION_GRANTED
                             && ActivityCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.ACCESS_COARSE_LOCATION)
@@ -86,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
                     userOneIsLoggedIn = true;
                 }
                 else{
-                    mBtnUserOne.setText(R.string.btn_lbl_user_one_ci);
                     userOneIsLoggedIn = false;
                     myRefUserOne.child("is_on").setValue(false);
                     locationManager.removeUpdates(locationListener);
@@ -94,15 +87,16 @@ public class MainActivity extends AppCompatActivity {
                     myRefUserOne.child("longitude").setValue(0);
                     myRefUserOne.child("speed").setValue(0);
                 }
+
             }
         });
 
-        mBtnUserTwo.setOnClickListener(new View.OnClickListener() {
+
+        mTBtnUserTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!userTwoIsLoggedIn) {
                     myRefUserTwo.child("is_on").setValue(true);
-                    mBtnUserTwo.setText(R.string.btn_lbl_user_two_co);
                     if (ActivityCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.ACCESS_FINE_LOCATION)
                             != PackageManager.PERMISSION_GRANTED
                             && ActivityCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.ACCESS_COARSE_LOCATION)
@@ -120,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
                     userTwoIsLoggedIn = true;
                 }
                 else{
-                    mBtnUserTwo.setText(R.string.btn_lbl_user_two_ci);
                     userTwoIsLoggedIn = false;
                     myRefUserTwo.child("is_on").setValue(false);
                     locationManager.removeUpdates(locationListener);
@@ -128,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
                     myRefUserTwo.child("longitude").setValue(0);
                     myRefUserTwo.child("speed").setValue(0);
                 }
+
             }
         });
 

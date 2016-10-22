@@ -11,11 +11,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.alanpasi.ondeestavoce.MainActivity">
 
-    <Button
-        android:id="@+id/btn_user_one"
+    <ToggleButton
+        android:id="@+id/tbtn_user_one"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_lbl_user_one_ci" />
+        android:textOff="@string/btn_lbl_user_one_ci"
+        android:textOn="@string/btn_lbl_user_one_co" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -80,11 +81,12 @@
             android:textAlignment="viewEnd" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_user_two"
+    <ToggleButton
+        android:id="@+id/tbtn_user_two"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_lbl_user_two_ci" />
+        android:textOff="@string/btn_lbl_user_two_ci"
+        android:textOn="@string/btn_lbl_user_two_co"/>
 
     <LinearLayout
         android:layout_width="match_parent"
